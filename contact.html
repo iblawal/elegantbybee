@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - ELEGANTE BEE SERVICES</title>
+  <link rel="stylesheet" href="ele.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top bg-gold" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">ELEGANTEBYBEE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" href="services.html">All Services</a></li>
+              <li><a class="dropdown-item" href="request-quote.html">Request a Quote</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <!-- Hero Section for Contact Page -->
+  <section class="contact-hero">
+     <div class="container">
+       <h1>Contact Us</h1>
+       <p>Please contact us via any of the channels below. A staff member will be in touch shortly.</p>
+    </div>
+  </section>
+
+
+  <section class="contact-form-section">
+    <form class="contact-form">
+    <!-- First Name -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name <span>*</span></label>
+          <input type="text" id="firstName" placeholder="First Name" required>
+       </div>
+
+      <!-- Last Name -->
+        <div class="form-group">
+          <label for="lastName">Last Name <span>*</span></label>
+          <input type="text" id="lastName" placeholder="Last Name" required>
+        </div>
+      </div>
+
+    <!-- Email -->
+    <div class="form-row">
+      <div class="form-group full-width">
+        <label for="email">Email <span>*</span></label>
+        <input type="email" id="email" placeholder="Email Address" required>
+      </div>
+    </div>
+
+    <!-- Subject -->
+    <div class="form-row">
+      <div class="form-group full-width">
+        <label for="subject">Subject <span>*</span></label>
+        <input type="text" id="subject" placeholder="Subject" required>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div class="form-row">
+      <div class="form-group full-width">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Your message here..."></textarea>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-row">
+      <div class="form-group full-width" style="text-align: center;">
+        <button type="submit" class="btn-gold">Send Message</button>
+      </div>
+    </div>
+  </form>
+</section>
+
+      <!-- Let’s Make This Moment Flawless Section -->
+<section style="background: url('flawless img.jpg') center/cover no-repeat; padding: 100px 20px 120px; color: #bfa14d; text-align: center; margin-bottom: 80px;">
+  <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Let's Make This Moment</h2>
+  <h3 style="font-size: 2rem; font-weight: 300;">flawless</h3>
+  <a href="request-quote.html" style="display: inline-block; margin-top: 30px; padding: 12px 30px; background-color: #bfa14d; color: white; text-decoration: none; font-weight: 600; border-radius: 4px;">
+    Send Request
+  </a>
+</section>
+
+<!-- Decorative Divider for Visual Separation -->
+<hr style="border: none; height: 4px; background-color: #bfa14d; margin: 0 auto 60px; width: 80%; border-radius: 5px;">
+
+<!-- GET IN TOUCH WITH US Section -->
+<section class="elegant-contact-touch">
+  <div class="container">
+    <h2 class="contact-heading">GET IN TOUCH WITH US</h2>
+    <p class="sub-heading">You can reach us via any of the channels below:</p>
+
+    <div class="contact-info-grid">
+      <div class="contact-box">
+        <i class="fas fa-map-marker-alt"></i>
+        <h4>Visit Us</h4>
+        <p>No. 114 Awolowo Road<br>South West Ikoyi, Lagos, Nigeria</p>
+      </div>
+
+      <div class="contact-box">
+        <i class="fas fa-phone-alt"></i>
+        <h4>Call Us</h4>
+        <p>Lawal – 0805 873 0526</p>
+      </div>
+
+      <div class="contact-box">
+        <i class="fas fa-clock"></i>
+        <h4>Working Hours</h4>
+        <p>Mon–Fri: 9AM – 5PM<br>Saturday: 10AM – 3PM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Thank You Modal -->
+   <div id="thankYouModal" class="thank-you-modal">
+     <div class="thank-you-box">
+       <h2>Thank You!</h2>
+       <p>Your message has been sent. We'll get back to you shortly.</p>
+       <button onclick="closeModal()">Close</button>
+     </div>
+   </div>
+
+  <script>
+   const form = document.querySelector('.contact-form');
+   const modal = document.getElementById('thankYouModal');
+
+    form.addEventListener('submit', function (e) {
+     e.preventDefault(); // Stop actual submission
+
+     const firstName = document.getElementById('firstName').value.trim();
+     const lastName = document.getElementById('lastName').value.trim();
+     const email = document.getElementById('email').value.trim();
+
+     if (!firstName || !lastName || !email) {
+       alert('Please fill in all required fields.');
+       return;
+     }
+
+    form.reset();
+    modal.style.display = 'flex';
+   });
+
+   function closeModal() {
+    modal.style.display = 'none';
+   }
+ </script>
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2025 ELEGANTE BEE SERVICES. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</body>
+</html>
+
+
