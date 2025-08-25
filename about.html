@@ -11,40 +11,74 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg fixed-top bg-gold" id="mainNav">
-    <div class="container">
+  <!-- Navbar -->
+  <nav class="navbar fixed-top bg-gold" id="mainNav">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- Logo -->
       <a class="navbar-brand fw-bold" href="index.html">ELEGANTEBYBEE</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
   
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-              <li><a class="dropdown-item" href="services.html">All Services</a></li>
-              <li><a class="dropdown-item" href="request-quote.html">Request a Quote</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-        </ul>
+      <!-- Navbar Links (Desktop Only) -->
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="request-quote.html">Request a Quote</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+  
+      <!-- Hamburger (Mobile Only) -->
+      <div id="hamburger" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </nav>
   
-     
-
-  <section class="hero about-hero">
-    <div class="container text-center">
-      <h1 class="display-4">About Us</h1>
-      <p class="lead">Discover the elegance behind ELEGANTE BEE SERVICES</p>
+  <!-- Sidebar Menu (Mobile) -->
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <span id="closeSidebar" class="close-btn">&times;</span>
     </div>
-  </section>
+    <ul class="sidebar-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="services.html">All Services</a></li>
+          <li><a href="request-quote.html">Request a Quote</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  
+     
+  <!-- About Section -->
+   <section class="about-hero">
+     <div class="container">
+       <div class="row align-items-center">
+         <div class="col-md-15 col-lg-14">
+          <div class="hero-text-box">
+            <h1 class="display-4 fw-bold"><span class="gold-text">About</span> Us</h1>
+            <p class="lead">Crafting unforgettable experiences with elegance, creativity, and precision.</p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
     
   <section class="py-5 about-section">
     <div class="container">
@@ -55,13 +89,13 @@
         <div class="col-md-6">
           <h2 class="section-title">More About Elegante Bee</h2>
           <p class="about-text">
-            ELEGANTE BEE SERVICES is more than a brand — it’s a lifestyle. We are driven by the belief that events should not only be seen, but felt.
+            ELEGANTE BEE SERVICES is more than a brand, it’s a lifestyle. We are driven by the belief that events should not only be seen, but felt.
           </p>
           <p class="about-text">
             With years of experience crafting luxurious weddings, corporate events, fashion activations, and influencer experiences, we’ve mastered the art of detail and emotion.
           </p>
           <p class="about-text">
-            Our founder built ELEGANTE BEE from the ground up — fusing industry experience, media exposure, and bold creative vision into one name clients trust across Nigeria and beyond.
+            Our founder built ELEGANTE BEE from the ground up  fusing industry experience, media exposure, and bold creative vision into one name clients trust across Nigeria and beyond.
           </p>
           <p class="quote"><em>“Our passion is elegance. Our tool is excellence.”</em></p>
           <p class="about-text">
@@ -73,7 +107,7 @@
             We don’t believe in cookie-cutter. Every event is a canvas, and every client is the muse. Whether you’re planning a multi-day destination celebration or an intimate proposal, our team brings <strong>precision, creativity, and purpose</strong> to every detail.
           </p>
           <p class="about-text">
-            We infuse our events with <strong>visual harmony, emotional depth, and lifestyle relevance</strong> — ensuring that guests don’t just attend... they feel.
+            We infuse our events with <strong>visual harmony, emotional depth, and lifestyle relevance</strong>, ensuring that guests don’t just attend... they feel.
           </p>
   
           <h4 class="mt-5 mb-3">What We Do Best</h4>
@@ -89,15 +123,15 @@
   
           <h4 class="mt-5 mb-3">Why Clients Choose Us</h4>
           <ul class="list-unstyled about-list">
-            <li>💎 <strong>Luxury without ego</strong> — We blend prestige with humility.</li>
-            <li>🖋️ <strong>Creative consulting</strong> — Your ideas + our innovation = unmatched synergy.</li>
-            <li>🤝 <strong>Trust & transparency</strong> — You know what's happening, when, and why.</li>
-            <li>📸 <strong>Experience-minded</strong> — We think like producers, stylists, and guests.</li>
+            <li>💎 <strong>Luxury without ego</strong> : We blend prestige with humility.</li>
+            <li>🖋️ <strong>Creative consulting</strong> :Your ideas + our innovation = unmatched synergy.</li>
+            <li>🤝 <strong>Trust & transparency</strong> : You know what's happening, when, and why.</li>
+            <li>📸 <strong>Experience-minded</strong> : We think like producers, stylists, and guests.</li>
           </ul>
   
           <h4 class="mt-5 mb-3">Our Vision</h4>
           <p class="about-text">
-            To become the go-to event brand across Nigeria and beyond — known not just for elegant aesthetics, but for the <strong>feeling</strong> guests carry long after the music stops.
+            To become the go-to event brand across Nigeria and beyond known not just for elegant aesthetics, but for the <strong>feeling</strong> guests carry long after the music stops.
           </p>
 
         </div>
@@ -115,13 +149,13 @@
         <div class="contact-box">
           <i class="fas fa-map-marker-alt"></i>
           <h4>Visit Us</h4>
-          <p>No. 114 Awolowo Road<br>South West Ikoyi, Lagos, Nigeria</p>
+          <p></p>
         </div>
   
         <div class="contact-box">
           <i class="fas fa-phone-alt"></i>
           <h4>Call Us</h4>
-          <p>Lawal – 0805 873 0526</p>
+          <p></p>
         </div>
   
         <div class="contact-box">

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+.testimonial-section {
+    background-color:#bfa14d;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .testimonial-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .testimonial {
+    display: none;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .testimonial.active {
+    display: block;
+  }
+
+  .testimonial .quote {
+    color: white !important;
+  }
+  
+  .testimonial .author {
+    color: white !important;
+  }
+  
+  
+  .quote {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .author {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  button.prev,
+  button.next {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    color: #ffdd57;
+  }
+  

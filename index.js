@@ -1,133 +1,159 @@
-
-  document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scroll for anchor links
-    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-    smoothScrollLinks.forEach(link => {
-      link.addEventListener("click", function (e) {
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
-        }
-      });
+document.addEventListener("DOMContentLoaded", function () {
+  /* =====================
+     Smooth Scroll
+  ====================== */
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function (e) {
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     });
+  });
 
-    // Navbar collapse on link click (mobile)
-    const navLinks = document.querySelectorAll(".navbar-collapse .nav-link");
-    const navCollapse = document.querySelector(".navbar-collapse");
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
-        if (navCollapse.classList.contains("show")) {
-          new bootstrap.Collapse(navCollapse).toggle();
-        }
-      });
-    });
+  /* =====================
+     Navbar & Sidebar
+  ====================== */
+  const hamburger = document.getElementById("hamburger");
+  const sidebar = document.getElementById("sidebar");
+  const closeSidebar = document.getElementById("closeSidebar");
 
-    // Contact form validation
-    const contactForm = document.querySelector(".contact-form form");
-    if (contactForm) {
-      contactForm.addEventListener("submit", function (e) {
-        const inputs = this.querySelectorAll("input, textarea");
-        let valid = true;
-        inputs.forEach(input => {
-          if (input.hasAttribute("required") && input.value.trim() === "") {
-            valid = false;
-            input.classList.add("is-invalid");
-          } else {
-            input.classList.remove("is-invalid");
-          }
-        });
-        if (!valid) {
-          e.preventDefault();
-          alert("Please fill in all required fields.");
-        }
-      });
+  if (hamburger && sidebar && closeSidebar) {
+    function openSidebar() {
+      sidebar.style.width = "250px";
+      document.body.style.overflow = "hidden";
     }
 
-    // "Plan My Event" fallback scroll
-    const planBtn = document.querySelector('a[href="planmyevent.html"]');
-    if (planBtn) {
-      planBtn.addEventListener("click", (e) => {
-        if (planBtn.getAttribute("href").includes("#")) {
-          e.preventDefault();
-          document.querySelector("#plan-form")?.scrollIntoView({ behavior: "smooth" });
-        }
-      });
+    function closeSidebarMenu() {
+      sidebar.style.width = "0";
+      document.body.style.overflow = "auto";
     }
 
-    // Intelligent AOS animation assignment
-    const randomAnimations = [
-      "fade-up",
-      "fade-down",
-      "fade-left",
-      "zoom-out",
-      "flip-left",
-      "flip-right"
-    ];
+    hamburger.addEventListener("click", openSidebar);
+    closeSidebar.addEventListener("click", closeSidebarMenu);
 
-    document.querySelectorAll("div").forEach((div, i) => {
-      if (div.classList.contains("hero-text")) {
-        div.setAttribute("data-aos", "fade-left");
-        div.setAttribute("data-aos-delay", "100");
-
-      } else if (div.classList.contains("service-card")) {
-        div.setAttribute("data-aos", "zoom-in");
-        div.setAttribute("data-aos-delay", `${200 + (i % 3) * 100}`);
-
-      } else if (div.classList.contains("workflow-box")) {
-        div.setAttribute("data-aos", "fade-up");
-        div.setAttribute("data-aos-delay", `${200 + (i % 4) * 100}`);
-
-      } else if (div.closest(".about-section")) {
-        div.setAttribute("data-aos", "fade-left");
-        div.setAttribute("data-aos-delay", "100");
-
-      } else if (div.closest(".meet-founder")) {
-        div.setAttribute("data-aos", "fade-right");
-        div.setAttribute("data-aos-delay", "100");
-
-      } else if (!div.hasAttribute("data-aos")) {
-        const random = randomAnimations[Math.floor(Math.random() * randomAnimations.length)];
-        div.setAttribute("data-aos", random);
+    document.addEventListener("click", function (e) {
+      if (
+        sidebar.style.width === "250px" &&
+        !sidebar.contains(e.target) &&
+        !hamburger.contains(e.target)
+      ) {
+        closeSidebarMenu();
       }
     });
 
-    // Apply fade-left to hero containers across pages
-    const heroSelectors = [
-      ".hero .container",
-      ".request-hero .container",
-      ".execution-hero .container",
-      ".proposal-hero .container",
-      ".planmyevent-hero .container",
-      ".discovery-hero .container",
-      ".concept-hero .container",
-      ".services-hero .container",
-      ".about-hero .container",
-      ".contact-hero .container",
-      ".meet-founder-hero .container",
-      ".hero-text",
-      ".hero-text h1",
-      ".hero-text p"
-    ];
-
-    heroSelectors.forEach(selector => {
-      const hero = document.querySelector(selector);
-      if (hero && !hero.hasAttribute("data-aos")) {
-        hero.setAttribute("data-aos", "fade-left");
-        hero.setAttribute("data-aos-delay", "100");
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeSidebarMenu();
       }
     });
+  }
 
-    // Initialize AOS
-    if (typeof AOS !== "undefined") {
-      AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-      });
+  /* =====================
+     Hero Section Animation
+  ====================== */
+  const heroElements = document.querySelectorAll(
+    ".hero-text, .hero-text h1, .hero-text p"
+  );
+  heroElements.forEach((el, i) => {
+    el.setAttribute("data-aos", "fade-right");
+    el.setAttribute("data-aos-delay", `${100 + i * 100}`);
+  });
+
+  /* =====================
+     Intelligent AOS Assignment
+  ====================== */
+  const randomAnimations = [
+    "fade-up", "fade-down", "fade-left",
+    "zoom-out", "flip-left", "flip-right"
+  ];
+
+  document.querySelectorAll("div").forEach((div, i) => {
+    if (!div.hasAttribute("data-aos")) {
+      const random = randomAnimations[Math.floor(Math.random() * randomAnimations.length)];
+      div.setAttribute("data-aos", random);
+      div.setAttribute("data-aos-delay", `${(i % 5) * 100}`);
     }
   });
 
+  if (typeof AOS !== "undefined") {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+  }
+
+  /* =====================
+     Contact Form Validation
+  ====================== */
+  const contactForm = document.querySelector(".contact-form form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      const inputs = this.querySelectorAll("input[required], textarea[required]");
+      let valid = true;
+
+      inputs.forEach(input => {
+        if (input.value.trim() === "") {
+          valid = false;
+          input.classList.add("is-invalid");
+        } else {
+          input.classList.remove("is-invalid");
+        }
+      });
+
+      if (!valid) {
+        e.preventDefault();
+        alert("Please fill in all required fields.");
+      }
+    });
+  }
+
+  /* =====================
+     Countdown Timer
+  ====================== */
+  const countdownElement = document.getElementById("countdown");
+  if (countdownElement) {
+    const targetDate = new Date("2025-12-01T00:00:00").getTime();
+    setInterval(() => {
+      const now = Date.now();
+      const distance = targetDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      countdownElement.textContent = `${days} days left!`;
+    }, 1000);
+  }
+
+  /* =====================
+     Testimonial Slider
+  ====================== */
+  const testimonials = document.querySelectorAll(".testimonial");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let currentIndex = 0;
+
+  function showTestimonial(index) {
+    testimonials.forEach((t, i) => {
+      t.classList.toggle("active", i === index);
+    });
+  }
+
+  if (prevBtn && nextBtn && testimonials.length) {
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(currentIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      showTestimonial(currentIndex);
+    });
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      showTestimonial(currentIndex);
+    }, 5000);
+
+    showTestimonial(currentIndex);
+  }
+});

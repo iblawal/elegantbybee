@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request A Quote - ELEGANTE BEE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar fixed-top bg-gold" id="mainNav">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- Logo -->
+      <a class="navbar-brand fw-bold" href="index.html">ELEGANTEBYBEE</a>
+  
+      <!-- Navbar Links (Desktop Only) -->
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="request-quote.html">Request a Quote</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+  
+      <!-- Hamburger (Mobile Only) -->
+      <div id="hamburger" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Sidebar Menu (Mobile) -->
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <span id="closeSidebar" class="close-btn">&times;</span>
+    </div>
+    <ul class="sidebar-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="services.html">All Services</a></li>
+          <li><a href="request-quote.html">Request a Quote</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+   
+  <!-- Hero Section -->
+  <section class="hero text-white text-center d-flex align-items-center justify-content-center" style="background-image: url(elleg\ img\ 6.jpg) no-repeat center center/cover; height: 100vh;">
+    <div class="container">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-20 col-lg-19">
+          <div class="hero-text-box">
+            <h1 class="display-4 fw-bold"><span class="gold-text">Request</span> A Quote</h1>
+            <p class="lead">Tell us about your project and let’s bring your vision to life.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form Section -->
+  <section class="py-5">
+    <div class="container">
+      <form class="row g-4">
+        <div class="col-md-6">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" id="firstName" class="form-control" required />
+        </div>
+        <div class="col-md-6">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" id="lastName" class="form-control" required />
+        </div>
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" class="form-control" required />
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-control" required />
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Preferred Method of Contact</label><br />
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="contactMethod" id="contactPhone" value="phone" />
+            <label class="form-check-label" for="contactPhone">Phone</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="contactMethod" id="contactEmail" value="email" />
+            <label class="form-check-label" for="contactEmail">Email</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="contactMethod" id="contactOther" value="other" />
+            <label class="form-check-label" for="contactOther">Other</label>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="projectDetails" class="form-label">Tell Us About Your Project or Event</label>
+          <textarea id="projectDetails" rows="4" class="form-control" required></textarea>
+        </div>
+
+        <div class="col-md-6">
+          <label for="services" class="form-label">What Services Can We Assist You With?</label>
+          <select id="services" class="form-select" multiple>
+            <option>Wedding</option>
+            <option>Anniversary</option>
+            <option>Birthday</option>
+            <option>Corporate</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="urgency" class="form-label">How Urgent is Your Project?</label>
+          <select id="urgency" class="form-select">
+            <option>Flexible</option>
+            <option>Within 1 Month</option>
+            <option>Within 2 Weeks</option>
+            <option>ASAP</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="dueDate" class="form-label">Preferred Due Date</label>
+          <input type="date" id="dueDate" class="form-control" />
+        </div>
+
+        <div class="col-12 text-center mt-4">
+          <button type="submit" class="btn btn-gold px-5 py-2">Submit Request</button>
+        </div>
+      </form>
+    </div>
+  </section>
+    
+  <section class="container my-5">
+    <div class="price-section shadow-lg">
+      <div class="text-center mb-4">
+        <h2>ELEGANTBY BEE</h2>
+        <p class="mb-0">Premium Event Coverage & Advertising</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item price-item">100 to 250 guests (Maryland) <strong>$700</strong></li>
+        <li class="list-group-item price-item">251 guests & above (Maryland) <strong>$1000</strong></li>
+        <li class="list-group-item price-item">Confirmations (8) <strong>$100</strong></li>
+        <li class="list-group-item price-item">Red Carpet (1hr) <strong>$175</strong></li>
+        <li class="list-group-item price-item">2 Days Event Call <strong>240-604-0025</strong></li>
+        <li class="list-group-item price-item">Outside DMV + Flight, Ticket & Hotel by Host – Call <strong>240-604-0025</strong></li>
+        <li class="list-group-item price-item">Extra mileage fee (over 40 miles) <strong>+$150</strong></li>
+        <li class="list-group-item price-item">Event in Nigeria Call <strong>240-604-0025</strong></li>
+        <li class="list-group-item price-item"><strong>Advertising:</strong> Birthday Shoutout <strong>$75</strong></li>
+        <li class="list-group-item price-item">Business Advert (2 posts/week) <strong>$100</strong></li>
+      </ul>
+      <div class="contact-info mt-4 text-center">
+        <p><i class="fas fa-phone"></i> 240-604-0025</p>
+        <p><i class="fas fa-envelope"></i> elegantbybee@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container payment-section">
+    <div class="card shadow-sm p-4">
+      <h3 class="mb-3 text-center">Make a Payment</h3>
+      <form id="paymentForm">
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" id="name" class="form-control" placeholder="Enter your name" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Amount</label>
+          <input type="number" id="amount" class="form-control" placeholder="Enter amount" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Currency</label>
+          <select id="currency" class="form-select" required>
+            <option value="USD">USD - United States Dollar</option>
+            <option value="NGN">NGN - Nigerian Naira</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-pay w-100" onclick="payWithFlutterwave()">Pay Now</button>
+      </form>
+    </div>
+  </section>
+ 
+
+   
+
+   
+  
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 ELEGANTE BEE SERVICES. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Flutterwave SDK -->
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+<!-- External Payment JS -->
+<script src="payment.js"></script>
+</body>
+</html>
+

@@ -12,38 +12,70 @@
 <body>
 
   
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-gold" id="mainNav">
-    <div class="container">
+  <nav class="navbar fixed-top bg-gold" id="mainNav">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- Logo -->
       <a class="navbar-brand fw-bold" href="index.html">ELEGANTEBYBEE</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
   
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
-            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-              <li><a class="dropdown-item" href="services.html">All Services</a></li>
-              <li><a class="dropdown-item" href="request-quote.html">Request a Quote</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-        </ul>
+      <!-- Navbar Links (Desktop Only) -->
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Services</a>
+          <ul class="dropdown-menu">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="request-quote.html">Request a Quote</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+  
+      <!-- Hamburger (Mobile Only) -->
+      <div id="hamburger" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </nav>
-
-   <section class="hero">
-    <div class="container">
-      <h1 class="display-4 fw-bold">Plan my event</h1>
+  
+  <!-- Sidebar Menu (Mobile) -->
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <span id="closeSidebar" class="close-btn">&times;</span>
     </div>
-   </section>
+    <ul class="sidebar-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <ul class="dropdown-menu">
+          <li><a href="services.html">All Services</a></li>
+          <li><a href="request-quote.html">Request a Quote</a></li>
+        </ul>
+      </li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-15col-lg-14">
+          <div class="hero-text-box">
+            <h1 class="display-4 fw-bold"><span class="gold-text">Plan</span> my event</h1>
+            <p class="lead">Fill out the form below to request a quote for our services.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="quote-form-section py-5">
     <div class="container">
